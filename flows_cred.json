@@ -1,7 +1,7 @@
 {
     "35c7f143575edc9f": {},
     "1404e565686bad21": {
-        "user": "${mongoUserName}",
-        "password": "${mongoPassword}"
+        "user": "${service-mongoUserName}",
+        "password": "${service-mongoPassword}"
     }
 }

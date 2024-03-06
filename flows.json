@@ -888,11 +888,11 @@
     {
         "id": "1404e565686bad21",
         "type": "mongodb",
-        "hostname": "${mongoHost}",
+        "hostname": "${service-mongoHost}",
         "topology": "direct",
         "connectOptions": "authSource=admin",
         "port": "27017",
-        "db": "${mongoName}",
+        "db": "${service-mongoName}",
         "name": "mongoDb"
     },
     {
@@ -3697,85 +3697,6 @@
                 "eb7766b923f2cb35"
             ]
         ]
-    },
-    {
-        "id": "0befb71731e69848",
-        "type": "subflow:6a6d2afa5b0c7ec9",
-        "z": "7f99d43ecb62a74e",
-        "name": "",
-        "x": 890,
-        "y": 480,
-        "wires": [
-            [
-                "38452b18b63dc41c"
-            ]
-        ]
-    },
-    {
-        "id": "38452b18b63dc41c",
-        "type": "function",
-        "z": "7f99d43ecb62a74e",
-        "name": "function 413",
-        "func": "msg.icon=msg.payload;\nmsg.payload=msg.fromDB\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 975,
-        "y": 480,
-        "wires": [
-            [
-                "10c8858fdb29bd6d"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "7ccf89dea99c80e0",
-        "type": "inject",
-        "z": "7f99d43ecb62a74e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 740,
-        "y": 480,
-        "wires": [
-            [
-                "0befb71731e69848"
-            ]
-        ]
-    },
-    {
-        "id": "10c8858fdb29bd6d",
-        "type": "debug",
-        "z": "7f99d43ecb62a74e",
-        "name": "debug 49",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1020,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "41e2ccc8bf04ea8f",
