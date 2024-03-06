@@ -1,10 +1,7 @@
 {
-    "ee999ff6e94b7a71": {
-        "user": "roastery.ua1766",
-        "password": "owcobcOv"
-    },
-    "4afc492cea25dec4": {
-        "user": "root",
-        "password": "132465798"
+    "35c7f143575edc9f": {},
+    "1404e565686bad21": {
+        "user": "${mongoUserName}",
+        "password": "${mongoPassword}"
     }
 }
