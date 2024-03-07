@@ -160,9 +160,7 @@
             "9ea85d07af9014cc"
         ],
         "x": 14,
-        "y": 1119,
-        "w": 712,
-        "h": 902
+        "y": 1119
     },
     {
         "id": "f9276761348501ee",
@@ -226,9 +224,7 @@
             "64f74f7dd4daee26"
         ],
         "x": 14,
-        "y": 19,
-        "w": 2272,
-        "h": 1022
+        "y": 19
     },
     {
         "id": "e1ecfd85e80ab727",
@@ -252,9 +248,7 @@
             "367ec69a89a7b36f"
         ],
         "x": 774,
-        "y": 1119,
-        "w": 992,
-        "h": 162
+        "y": 1119
     },
     {
         "id": "7fc8f7b5100d61fa",
@@ -307,9 +301,7 @@
             "ba4bf0a202e85aa9"
         ],
         "x": 774,
-        "y": 1319,
-        "w": 1652,
-        "h": 622
+        "y": 1319
     },
     {
         "id": "a90efec1f305b81b",
@@ -353,9 +345,7 @@
             "8264ce8b934ba565"
         ],
         "x": 14,
-        "y": 3019,
-        "w": 1162,
-        "h": 662
+        "y": 3019
     },
     {
         "id": "b3d42080d0ac0627",
@@ -412,9 +402,7 @@
             "bf212acc267aad4f"
         ],
         "x": 14,
-        "y": 2059,
-        "w": 1032,
-        "h": 922
+        "y": 2059
     },
     {
         "id": "33f66acf801d0549",
@@ -448,9 +436,7 @@
             "0b1b6d283bc5371c"
         ],
         "x": 14,
-        "y": 79,
-        "w": 932,
-        "h": 362
+        "y": 79
     },
     {
         "id": "b5989844a1ca69ed",
@@ -485,9 +471,7 @@
             "11f583c6530c1750"
         ],
         "x": 14,
-        "y": 19,
-        "w": 1072,
-        "h": 362
+        "y": 19
     },
     {
         "id": "3d139b01bb821ed2",
@@ -527,9 +511,7 @@
             "7c773fb9f8c43a0c"
         ],
         "x": 14,
-        "y": 699,
-        "w": 1552,
-        "h": 302
+        "y": 699
     },
     {
         "id": "fdcd76fba6995857",
@@ -560,9 +542,7 @@
             "505bfba4a6c720b7"
         ],
         "x": 14,
-        "y": 439,
-        "w": 992,
-        "h": 222
+        "y": 439
     },
     {
         "id": "0468e97fade0cfd4",
@@ -673,9 +653,7 @@
             "eaa9ea13b3dd976d"
         ],
         "x": 14,
-        "y": 99,
-        "w": 992,
-        "h": 322
+        "y": 99
     },
     {
         "id": "bc5de473d17e7d01",
@@ -753,9 +731,7 @@
             "afbb0ce57fe5129e"
         ],
         "x": 34,
-        "y": 19,
-        "w": 1888,
-        "h": 1162
+        "y": 19
     },
     {
         "id": "fb37c28a5458cc2f",
@@ -784,9 +760,7 @@
             "4a826ca39df63118"
         ],
         "x": 94,
-        "y": 1279,
-        "w": 1052,
-        "h": 342
+        "y": 1279
     },
     {
         "id": "398457a4bc6d8725",
@@ -862,9 +836,7 @@
             "6345fb0aa23a3037"
         ],
         "x": 14,
-        "y": 3699,
-        "w": 3632,
-        "h": 862
+        "y": 3699
     },
     {
         "id": "b0ef14992c694846",
@@ -880,7 +852,7 @@
             "781e82cf462af243",
             "8f8ca6e8d858b872"
         ],
-        "x": 54,
+        "x": 94,
         "y": 239,
         "w": 472,
         "h": 82
@@ -1325,7 +1297,7 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 140,
+        "x": 180,
         "y": 280,
         "wires": [
             [
@@ -1343,7 +1315,7 @@
         "headers": {
             "content-type": "text/css"
         },
-        "x": 450,
+        "x": 490,
         "y": 280,
         "wires": []
     },
@@ -1359,7 +1331,7 @@
         "syntax": "mustache",
         "template": "@import url(\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap\");\n\n:root {\n  --main-color: #F2CB2F;\n  --main-color_text: #00000;\n  --button-color-hover: transparent;\n  --button-color-disabled: #cd99a7;\n  --border-radius-container: 8px;\n  --border-radius-button: 5px;\n  --box-shadow: 0px 10px 21px rgba(0, 0, 0, 0.16);\n}\n* {\n  font-family: \"Poppins\", sans-serif !important;\n    padding: 0 !important;\n}\nspan{\n  color: var(--main-color_text) !important;\n  transition: all 0.4s ease;\n}\n\n\nbody .fhLqEV {\n  background: #f2f5fb !important;\n  background: rgb(240, 240, 245) !important;\n\n}\n\n.menu {\n    background-color: #212b36!important;\n    bottom: 0 !important;\n    padding: 0 !important;\n    position: fixed !important;\n    top: 0 !important;\n    left:0!important;\n    z-index:2!important;\n    transition: margin .25s ease-out !important;\n  \n}\n} \n.menu_img {\n    top: 0!important;\n    transform: translateX(-60%);\n    right: auto!important;\n    border-bottom: 1px solid #CDCDCD !important;\n    padding-left:25px !important;\n    padding-bottom: 6px !important;\n}\n\n.menu__logo {\n      border-top: 1px solid #CDCDCD !important;\n      margin-right: 0 !important;\n      right: auto!important;\n      padding-left: 34px!important; \n      padding-top:3px!important;\n      color: white !important;  \n}\n\n}\n.menu_accordeon {\n    width: 100%!important;\n    overflow-y: scroll !important;\n    height: calc(100vh - 240px)!important;\n}\n\n.menu_accordeon .bp3-button {\n    background: transparent !important;\n    color:white!important;\n    font-weight: 500 !important;\n    font-family: 'Open Sans';\n    font-size: 18px !important;\n    padding: 16px 20px !important;\n    box-shadow: none !important;\n    justify-content: flex-start !important;\n    transition: all 0.3s ease !important;\n}\n\n.menu_accordeon .bp3-button-text{ \n    /* width: 15% !important; */\n   \n}\n\n.menu_accordeon .bp3-button-text img {\n    margin-left:10px !important;\n    width: 25px !important;\n    height: 25px !important;\n    color: white !important;\n}\n\n.menu_accordeon .bp3-button:hover img {\n    filter: invert(29%) sepia(97%) saturate(681%) hue-rotate(164deg) brightness(91%) contrast(93%) !important;\n}\n.anticon{\n padding-left: 15px!important;\n}\n\n.menu_accordeon .bp3-collapse-body>div {\n    background: transparent !important;\n    color: white;\n    font-weight: 500 !important;\n}\n\n.menu_accordeon .sub_category {\n    justify-content: flex-end !important;\n    font-size: 16px !important;\n    padding: 10px 30px 10px 0!important;\n}\n\n.bp3-collapse-body[aria-hidden=\"false\"] .anticon {\n    transform: rotate(90deg) !important;\n}\n\n.menu_accordeon .bp3-button:hover, .menu_accordeon .bp3-collapse-body>div:hover {\n    color: #7CC9E2 !important;\n}\n.active {\n    color: #7CC9E2 !important;\n}\n.active:after {\n    display: none!important;\n}\n}\n.menu_accordeon .bp3-button:hover .anticon {\n    transform: rotate(90deg) !important;\n}\n\n\n.menu_accordeon .CUSTOM_ACCORDION_WIDGET>div:nth-last-child(6) {\n    border-top: 1px solid #CDCDCD !important;\n    padding-top:4px !important;\n    /* width: 15% !important; */\n}\n.menu_accordeon .CUSTOM_ACCORDION_WIDGET>div{\n    /* width: 15% !important; */\n}\n\n/*Menu END*/\n \n/*HEADER*/\n.header{\n    position: fixed !important;\n    display:flex !important;\n    justify-content: center!important;\n    width: calc(100% + 0.9%)!important;\n    right: 0 !important;\n    top: 0 !important;\n    border-bottom: 2px solid #E0E0E0 !important;\n    padding: 20px 0px 20px 0!important;\n    background: #BDDAFF !important;\n}\n\n/* .header [type=\"CANVAS_WIDGET\"]{\n    width: calc(100% + 0.9%);\n} */\n\n.header .canvas{\n    height: 100% !important;\n     left:-4%!important; \n     right:0!important;\n}\n.header__page {\n     display:flex !important;\n    /* top: 50% !important;\n    transform: translateY(-55%);\n    right: auto!important;*/\n    left: 120px!important; \n}\n\n.header__user_icon {\n    display:flex !important;\nmargin-left: 30px !important;\n}\n.header__button{\n     display:flex !important;\n     margin-left: 50px !important;\n}\n.header__page span {\n    display:flex !important;\n    text-transform: uppercase !important;\n    font-size: 26px !important;\n    font-weight: 600 !important;\n    font-family: 'Open Sans';\n    line-height: 35px;\n    color: #27272E;\n    /* height:100%!important; */\n}\n\n\n.main_container {\n    width: calc(100vw - 250px)!important;\n    padding: 10px !important;\n    left:250px !important;\n}\n\n\n/*.navigation__wrap */ .rc-select-selector {\n    background: #FCFCFC !important;\n    border: 2px solid #EFEFEF !important;\n    border-radius: 12px !important;\n}\n/*.navigation__wrap */ .rc-select-selector:hover{\n    background: #F4F4F4 !important;\n}\n\n/*.navigation__wrap*/ .bp3-input{\n    background: #F4F4F4 !important;\n    border: 2px solid transparent !important;\n    border-radius: 12px !important;\n}\n\n.navigation__wrap .navSelect>div>div>div>div{\n    flex-direction: row-reverse;\n}\n.navigation__wrap .navSelect>div>div>div>div>div.label-container{\n    width: auto !important;\n    padding-left: 15px !important;\n    padding-right: 0px !important;\n    text-align: right;\n}\n\n.navigation__wrap .bp3-input{\n    /* width: 280px !important; */\n}\n.navigation__wrap .search_input .bp3-input{\n    padding-left: 23px !important;\n    /* width: 150px!important; */\n    /* right: 15px !important; */\n    background-image: url('images/search_field.png') !important;\n    background-repeat: no-repeat !important;\n    background-position:5% !important;\n    border:2px solid #e4e4e4 !important;\n    transition: all 0.4s ease;\n}\n\n.navigation__wrap .search_input .bp3-input:focus, \n.navigation__wrap .search_input .bp3-input:hover, \n.navigation__wrap .search_input .bp3-input:focus:focus{\n border: 2px solid #9A9FA5 !important;\n}\n\n.navigation__wrap .search_input .bp3-input::placeholder{\n    font-weight: 600;\n}\n\n.navigation__wrap.multiply .date_picker>div>div>div>div>div:first-child{\n    flex: 1 1 30% !important;\n}\n.navigation__wrap.multiply .date_picker>div>div>div>div>div:last-child{\n    flex: 1 1 70% !important;\n}\n.navigation__wrap.multiply .date_picker input{\n    max-width: none !important; \n    border:2px solid #e4e4e4 !important;\n    transition: all 0.4s ease;\n}\n\n.navigation__wrap .date_picker .bp3-input:focus, \n.navigation__wrap .date_picker .bp3-input:hover, \n.navigation__wrap .date_picker .bp3-input:focus:focus{\n border: 2px solid #9A9FA5 !important;\n}\n\n\n.tableMain>div>div>div>div>div:first-child .bp3-input{\n    background: #F4F4F4 !important;\n    border-radius: 0!important; \n}\n.navigation__wrap .select-button{\n    background: #FCFCFC !important;\n    border: 2px solid #EFEFEF !important;\n    border-radius: 12px !important;\n    flex-direction: row-reverse;\n}\n\n.navigation__wrap .select-button:hover{\n    background: #F4F4F4 !important;\n}\n.select-button{\n    background: #FCFCFC !important;\n    border: 2px solid #EFEFEF !important;\n    border-radius: 12px !important;\n    flex-direction: row-reverse;\n}\n\n\n.bp3-button{\n    transition: all 0.3s ease;\n    box-shadow: none !important;\n}\n\n.bp3-button:not(.menu_accordeon .bp3-button, .tableMain .bp3-button):hover{\n    background: none !important;\n    border: 2px solid #9A9FA5 !important;\n    box-shadow: none !important;\n}\n\n.bp3-popover-enter-done{\n    /*width: 404px !important;*/\n    border-radius: 0px 0px 12px 12px;\n}\n\n.bp3-popover-enter-done div{\n    max-width:100% !important;\n    transition: all 0.3s ease;\n}\n\n.bp3-popover.bp3-select-popover{\n    border-radius: 6px;\n    box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);\n    overflow:hidden;\n}\n.bp3-popover-enter-done .bp3-popover-content{\n    background: #FFFFFF;\n}\n\n\n/*.navigation__wrap*/.select-button .bp3-button-text{\n    text-align: end;\n}\n/*.navigation__wrap*/.label-container{\n    justify-content: end;\n     align-items: center;\n    padding-right: 2px !important;\n}\n\n.navigation__wrap .label-container{\n    width: 404px !important;\n}\n\n\n.navigation__wrap [type=\"CANVAS_WIDGET\"]{\n    display:flex;\n    align-items: center;\n    background:#EDF2F7;\n    width:100%!important;\n    padding: 7px !important;\n    border-radius: 4px !important;\n}\n\n.navigation__wrap.without_color [type=\"CANVAS_WIDGET\"]{\n    background:#FCFCFC;\n}\n\n.navigation__wrap [type=\"CANVAS_WIDGET\"]>div{\n    top: auto !important;\n    /* height: 40px !important;\n    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2)!important; */\n}\n\n.button_add{\n     height: 40px !important;\n    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2)!important; \n    color: #8BC34A !important; \n}\n\n.label-container{\n    align-items: flex-start !important;\n}\n\n.thead {\n  text-align: center!important;\n}\n.table .CUSTOM_TABLE_WIDGET .tableWrap{\n  direction: rtl!important;\n}\n.table .CUSTOM_TABLE_WIDGET  .tableWrap .table .thead .tr .header-reorder {\n    background: #FAFAFB!important;\n    border-right:none!important;\n    height:50px!important;\n    display:flex;\n    align-items: center;\n}\n\n.table .draggable-header>div>div>div{\n    display:flex !important;\n    justify-content: center !important;\n}\n\n.tableWrap .gIwmIY , .tableWrap .ezUIkT, .hHWrLU{\njustify-content: center !important}\n\n\n.form_input .bp3-input{\n    padding-left: 8px !important;\n}\n\n.select-popover-wrapper .bp3-input-group > .bp3-icon:first-child {\n    left: 230px !important;\n display: none !important;\n    top: 14px;\n    margin: 9px;\n}\n\n\n\n.bp3-popover-enter-done {\n    width: 404px !important;\n  }\n\n\n\n.t--widget-containerwidget>div>div>div>div>div>div{\nbackground-color: transparent !important;\n}\n\n.noActive>div>div>div>div>div>div{\n    background-color: transparent !important;\n    transition: all 0.3s ease !important; \n}\n.activSpan>div>div>div>div>div>div{\n    background-color: #9C27B0!important;\n\n}\n\ndiv>button.maneConteyner{\n   color: #9C27B0!important;\n}\n",
         "output": "str",
-        "x": 300,
+        "x": 340,
         "y": 280,
         "wires": [
             [
