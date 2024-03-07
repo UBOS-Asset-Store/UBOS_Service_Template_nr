@@ -160,7 +160,9 @@
             "9ea85d07af9014cc"
         ],
         "x": 14,
-        "y": 1119
+        "y": 1119,
+        "w": 712,
+        "h": 902
     },
     {
         "id": "f9276761348501ee",
@@ -224,7 +226,9 @@
             "64f74f7dd4daee26"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 2272,
+        "h": 1022
     },
     {
         "id": "e1ecfd85e80ab727",
@@ -248,7 +252,9 @@
             "367ec69a89a7b36f"
         ],
         "x": 774,
-        "y": 1119
+        "y": 1119,
+        "w": 992,
+        "h": 162
     },
     {
         "id": "7fc8f7b5100d61fa",
@@ -301,7 +307,9 @@
             "ba4bf0a202e85aa9"
         ],
         "x": 774,
-        "y": 1319
+        "y": 1319,
+        "w": 1652,
+        "h": 622
     },
     {
         "id": "a90efec1f305b81b",
@@ -345,7 +353,9 @@
             "8264ce8b934ba565"
         ],
         "x": 14,
-        "y": 3019
+        "y": 3019,
+        "w": 1162,
+        "h": 662
     },
     {
         "id": "b3d42080d0ac0627",
@@ -402,7 +412,9 @@
             "bf212acc267aad4f"
         ],
         "x": 14,
-        "y": 2059
+        "y": 2059,
+        "w": 1032,
+        "h": 922
     },
     {
         "id": "33f66acf801d0549",
@@ -836,7 +848,9 @@
             "6345fb0aa23a3037"
         ],
         "x": 14,
-        "y": 3699
+        "y": 3699,
+        "w": 3632,
+        "h": 862
     },
     {
         "id": "b0ef14992c694846",
@@ -860,11 +874,11 @@
     {
         "id": "1404e565686bad21",
         "type": "mongodb",
-        "hostname": "${service-mongoHost}",
+        "hostname": "${SERVICE-MONGO-HOST-NAME}",
         "topology": "direct",
         "connectOptions": "authSource=admin",
         "port": "27017",
-        "db": "${service-mongoName}",
+        "db": "${SERVICE-MONGO-DB-NAME}",
         "name": "mongoDb"
     },
     {
@@ -6846,7 +6860,7 @@
         "z": "1d597c33277dd321",
         "g": "7fc8f7b5100d61fa",
         "name": "msg to email",
-        "func": "const nodeUrl = env.get(\"nodeUrl\");\n// const nodeUrl = \"https://nodered-63735d50fd02061100000009.ubos.tech\";\nconst url = `${nodeUrl}/queryToResetPassword?token=${msg.token}`;\nconst text = `\n<div style=\"padding: 10px 0; color: black;\">\n    <h1>We received a request to reset your password</h1>\n    <p>Use the link below to set up a new password for your account. If you did not request to reset your password, ignore this email and the link will expire on its own.</p>\n    <a href=\"${url}\" target=\"_blank\" style=\"margin: 10px 0; display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px; background: #2E3D49;\">\n        SET NEW PASSWORD\n    </a>\n</div>\n`;\n\n// msg.to = 'daniil12.com13@gmail.com';\nmsg.to = msg.oldpayload.email;\nmsg.topic = 'Reset password';\nmsg.payload = text;\n\nreturn msg;",
+        "func": "const nodeUrl = env.get(\"nodeUrl\");\nconst url = `${nodeUrl}/queryToResetPassword?token=${msg.token}`;\nconst text = `\n<div style=\"padding: 10px 0; color: black;\">\n    <h1>We received a request to reset your password</h1>\n    <p>Use the link below to set up a new password for your account. If you did not request to reset your password, ignore this email and the link will expire on its own.</p>\n    <a href=\"${url}\" target=\"_blank\" style=\"margin: 10px 0; display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px; background: #2E3D49;\">\n        SET NEW PASSWORD\n    </a>\n</div>\n`;\n\nmsg.to = msg.oldpayload.email;\nmsg.topic = 'Reset password';\nmsg.payload = text;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",

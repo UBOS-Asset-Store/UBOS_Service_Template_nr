@@ -1,4 +1,4 @@
-roastery
+Service template
 ========
 
 ### About
