@@ -731,36 +731,9 @@
             "afbb0ce57fe5129e"
         ],
         "x": 34,
-        "y": 19
-    },
-    {
-        "id": "fb37c28a5458cc2f",
-        "type": "group",
-        "z": "c504bd7256b5c336",
-        "name": "create pdf ACT",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "da65feef95962489",
-            "65f95263b33da0b7",
-            "3f2169bfe88e0949",
-            "f5e32587e3d58424",
-            "d46208a6bdc8ff5c",
-            "cf89c8c292353488",
-            "e7990639b467c6b4",
-            "b66755ed2a66fe4a",
-            "b3f943838e30a761",
-            "0b2889679d274d4e",
-            "364a7bc93def9264",
-            "6fcc735b232ebcde",
-            "c25eaeea8280e9f7",
-            "458ef9610cc8519f",
-            "4cccba5fab6ce78a",
-            "4a826ca39df63118"
-        ],
-        "x": 94,
-        "y": 1279
+        "y": 19,
+        "w": 1888,
+        "h": 1162
     },
     {
         "id": "398457a4bc6d8725",
@@ -856,6 +829,37 @@
         "y": 239,
         "w": 472,
         "h": 82
+    },
+    {
+        "id": "fb37c28a5458cc2f",
+        "type": "group",
+        "z": "c504bd7256b5c336",
+        "name": "create pdf ACT",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "da65feef95962489",
+            "65f95263b33da0b7",
+            "3f2169bfe88e0949",
+            "f5e32587e3d58424",
+            "d46208a6bdc8ff5c",
+            "cf89c8c292353488",
+            "e7990639b467c6b4",
+            "b66755ed2a66fe4a",
+            "b3f943838e30a761",
+            "0b2889679d274d4e",
+            "364a7bc93def9264",
+            "6fcc735b232ebcde",
+            "c25eaeea8280e9f7",
+            "458ef9610cc8519f",
+            "4cccba5fab6ce78a",
+            "4a826ca39df63118"
+        ],
+        "x": 34,
+        "y": 1239,
+        "w": 1052,
+        "h": 342
     },
     {
         "id": "1404e565686bad21",
@@ -11172,19 +11176,54 @@
         ]
     },
     {
+        "id": "afbb0ce57fe5129e",
+        "type": "debug",
+        "z": "c504bd7256b5c336",
+        "g": "bc5de473d17e7d01",
+        "name": "debug 39",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "fa30684a95651b49",
+        "type": "debug",
+        "z": "c504bd7256b5c336",
+        "name": "debug 43",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 1240,
+        "wires": []
+    },
+    {
         "id": "da65feef95962489",
         "type": "function",
         "z": "c504bd7256b5c336",
         "g": "fb37c28a5458cc2f",
         "name": "function 301",
-        "func": "\n// // Перетворюємо масив елементів у масив рядків таблиці\nconst rows = msg.componets.map(item => [{ text: item.name, style: 'tableContent' }, { text: item.article, style: 'tableContent' }, { text: item.amount, style: 'tableContent' }, { text: item.price, style: 'tableContent' }, { text: item.totalPrice, style: 'tableContent' }]);\n\n// Додаємо рядки таблиці до масиву body\nconst body = [[{ text: 'Назва', style: 'tableHeader' }, { text: 'Артикул', style: 'tableHeader' }, { text: 'Кількість', style: 'tableHeader' }, { text: 'Ціна €', style: 'tableHeader' }, { text: 'Сума €', style: 'tableHeader' }],\n...rows\n];\n\n\n// Calculate the total sum of the \"totalPrice\" column\nconst total = rows.reduce((acc, row) => acc + parseFloat(row[row.length - 1].text), 0);\n\n// Add a row to the \"body\" array with the total sum\nbody.push([{ text: 'Всього €', style: 'tableHeader' }, '', '', '', { text: total.toFixed(2), style: 'tableContent' }]);\n\n// Update the \"msg.payload\" object with the modified \"body\" array\nmsg.payload = {\n    content: [\n        { text: 'Акт виконаних робіт', style: 'header' },\n        { text: `Обладнання: ${msg.payload.items}` },\n        { text: `Sku: ${msg.payload.Sku}` },\n        { text: `Комплектація: ${msg.payload.complection}` },\n        { text: `Зовнішній стан: ${msg.payload.looks}` },\n        { text: `Зауваження та заключення: ${msg.payload.moreInfo}` },\n        { text: `Клієнт: ${msg.payload.client}` },\n        {\n            style: 'tableStyle',\n            table: {\n                headerRows: 1,\n                widths: ['*', '*', '*', '*', '*'],\n                body: body\n            }\n        },\n        { text: `Дата: ${msg.data}` }\n    ],\n    styles: {\n        header: {\n            fontSize: 18,\n            bold: true,\n            margin: [0, 0, 0, 10]\n        },\n        tableStyle: {\n            margin: [0, 10, 0, 10]\n        },\n        tableHeader: {\n            fontSize: 12,\n            bold: true,\n            fillColor: '#eee',\n            margin: [0, 2, 0, 2]\n        },\n        tableContent: {\n            fontSize: 10,\n            margin: [0, 2, 0, 2]\n        }\n    }\n};\n\nreturn msg;\n",
+        "func": "\n// // Перетворюємо масив елементів у масив рядків таблиці\nconst rows = msg.componets.map(item => [{ text: item.name, style: 'tableContent' }, { text: item.article, style: 'tableContent' }, { text: item.amount, style: 'tableContent' }, { text: item.price, style: 'tableContent' }, { text: item.totalPrice, style: 'tableContent' }]);\n\n// Додаємо рядки таблиці до масиву body\nconst body = [[{ text: 'Name', style: 'tableHeader' }, { text: 'Article', style: 'tableHeader' }, { text: 'Number', style: 'tableHeader' }, { text: 'Price €', style: 'tableHeader' }, { text: 'Сума €', style: 'tableHeader' }],\n...rows\n];\n\n\n// Calculate the total sum of the \"totalPrice\" column\nconst total = rows.reduce((acc, row) => acc + parseFloat(row[row.length - 1].text), 0);\n\n// Add a row to the \"body\" array with the total sum\nbody.push([{ text: 'In total €', style: 'tableHeader' }, '', '', '', { text: total.toFixed(2), style: 'tableContent' }]);\n\n// Update the \"msg.payload\" object with the modified \"body\" array\nmsg.payload = {\n    content: [\n        { text: 'Act of completed works', style: 'header' },\n        { text: `Equipment: ${msg.payload.items}` },\n        { text: `Sku: ${msg.payload.Sku}` },\n        { text: `Complete set: ${msg.payload.complection}` },\n        { text: `External condition: ${msg.payload.looks}` },\n        { text: `Remarks and conclusions: ${msg.payload.moreInfo}` },\n        { text: `Client: ${msg.payload.client}` },\n        {\n            style: 'tableStyle',\n            table: {\n                headerRows: 1,\n                widths: ['*', '*', '*', '*', '*'],\n                body: body\n            }\n        },\n        { text: `Date: ${msg.data}` }\n    ],\n    styles: {\n        header: {\n            fontSize: 18,\n            bold: true,\n            margin: [0, 0, 0, 10]\n        },\n        tableStyle: {\n            margin: [0, 10, 0, 10]\n        },\n        tableHeader: {\n            fontSize: 12,\n            bold: true,\n            fillColor: '#eee',\n            margin: [0, 2, 0, 2]\n        },\n        tableContent: {\n            fontSize: 10,\n            margin: [0, 2, 0, 2]\n        }\n    }\n};\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 415,
-        "y": 1400,
+        "x": 355,
+        "y": 1360,
         "wires": [
             [
                 "458ef9610cc8519f",
@@ -11203,8 +11242,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 200,
-        "y": 1400,
+        "x": 140,
+        "y": 1360,
         "wires": [
             [
                 "cf89c8c292353488",
@@ -11222,8 +11261,8 @@
         "inputProperty": "payload",
         "options": "{}",
         "outputProperty": "payload",
-        "x": 560,
-        "y": 1400,
+        "x": 500,
+        "y": 1360,
         "wires": [
             [
                 "f5e32587e3d58424"
@@ -11242,8 +11281,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
-        "y": 1400,
+        "x": 670,
+        "y": 1360,
         "wires": [
             [
                 "d46208a6bdc8ff5c",
@@ -11259,8 +11298,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 890,
-        "y": 1400,
+        "x": 830,
+        "y": 1360,
         "wires": []
     },
     {
@@ -11275,8 +11314,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 305,
-        "y": 1400,
+        "x": 245,
+        "y": 1360,
         "wires": [
             [
                 "4cccba5fab6ce78a",
@@ -11295,8 +11334,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 230,
-        "y": 1520,
+        "x": 170,
+        "y": 1480,
         "wires": [
             [
                 "c25eaeea8280e9f7",
@@ -11315,8 +11354,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 690,
-        "y": 1520,
+        "x": 630,
+        "y": 1480,
         "wires": [
             [
                 "364a7bc93def9264",
@@ -11332,8 +11371,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1070,
-        "y": 1520,
+        "x": 1010,
+        "y": 1480,
         "wires": []
     },
     {
@@ -11353,8 +11392,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 470,
-        "y": 1520,
+        "x": 410,
+        "y": 1480,
         "wires": [
             [
                 "b66755ed2a66fe4a",
@@ -11374,8 +11413,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 1520,
+        "x": 850,
+        "y": 1480,
         "wires": [
             [
                 "b3f943838e30a761",
@@ -11397,26 +11436,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 1580,
-        "wires": []
-    },
-    {
-        "id": "afbb0ce57fe5129e",
-        "type": "debug",
-        "z": "c504bd7256b5c336",
-        "g": "bc5de473d17e7d01",
-        "name": "debug 39",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 740,
+        "x": 720,
+        "y": 1540,
         "wires": []
     },
     {
@@ -11433,8 +11454,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 1580,
+        "x": 400,
+        "y": 1540,
         "wires": []
     },
     {
@@ -11451,8 +11472,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 1320,
+        "x": 740,
+        "y": 1280,
         "wires": []
     },
     {
@@ -11469,25 +11490,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "fa30684a95651b49",
-        "type": "debug",
-        "z": "c504bd7256b5c336",
-        "name": "debug 43",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1600,
-        "y": 1240,
+        "x": 380,
+        "y": 1280,
         "wires": []
     },
     {
@@ -11496,14 +11500,14 @@
         "z": "c504bd7256b5c336",
         "g": "fb37c28a5458cc2f",
         "name": "convertada",
-        "func": "\nconst setMonthName = (monthNumber) => {\n    let result = {}\n    switch (monthNumber) {\n        case 1:\n            result = {\n                shortNameEng: \"Jan\",\n                shortNameHeb: \"Січень\",\n            }\n            break;\n        case 2:\n            result = {\n                shortNameEng: \"Feb\",\n                shortNameHeb: \"Лютий\",\n            }\n            break;\n        case 3:\n            result = {\n                shortNameEng: \"Mar\",\n                shortNameHeb: \"Березень\",\n            }\n            break;\n        case 4:\n            result = {\n                shortNameEng: \"Apr\",\n                shortNameHeb: \"Квітень\",\n            }\n            break;\n        case 5:\n            result = {\n                shortNameEng: \"May\",\n                shortNameHeb: \"Травень\",\n            }\n            break;\n        case 6:\n            result = {\n                shortNameEng: \"Jun\",\n                shortNameHeb: \"Червень\",\n            }\n            break;\n        case 7:\n            result = {\n                shortNameEng: \"Jul\",\n                shortNameHeb: \"Липень\",\n            }\n            break;\n        case 8:\n            result = {\n                shortNameEng: \"Aug\",\n                shortNameHeb: \"Серпень\",\n            }\n            break;\n        case 9:\n            result = {\n                shortNameEng: \"Sep\",\n                shortNameHeb: \"Вересень\",\n            }\n            break;\n        case 10:\n            result = {\n                shortNameEng: \"Oct\",\n                shortNameHeb: \"Жовтень\",\n            }\n            break;\n        case 11:\n            result = {\n                shortNameEng: \"Nov\",\n                shortNameHeb: \"Листопад\",\n            }\n            break;\n        case 12:\n            result = {\n                shortNameEng: \"Dec\",\n                shortNameHeb: \"Грудень\",\n            }\n            break;\n        default:\n            result = {\n                shortNameEng: monthNumber,\n                shortNameHeb: monthNumber,\n            }\n    }\n    node.warn(result.shortNameHeb)\n    return result.shortNameHeb\n}\n\nconst dateConverter = () => {\n    const date = new Date()\n\n    let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()\n\n    let month = +date.getMonth() + 1\n    month = month < 10 ? '0' + month : month\n\n    return `${day}.${month}.${date.getFullYear()}`\n}\n\nmsg.data = dateConverter()\n\n\nreturn msg;\n",
+        "func": "\nconst setMonthName = (monthNumber) => {\n    let result = {}\n    switch (monthNumber) {\n        case 1:\n            result = {\n                shortNameEng: \"Jan\",\n                shortNameHeb: \"Jan\",\n            }\n            break;\n        case 2:\n            result = {\n                shortNameEng: \"Feb\",\n                shortNameHeb: \"Feb\",\n            }\n            break;\n        case 3:\n            result = {\n                shortNameEng: \"Mar\",\n                shortNameHeb: \"Mar\",\n            }\n            break;\n        case 4:\n            result = {\n                shortNameEng: \"Apr\",\n                shortNameHeb: \"Apr\",\n            }\n            break;\n        case 5:\n            result = {\n                shortNameEng: \"May\",\n                shortNameHeb: \"May\",\n            }\n            break;\n        case 6:\n            result = {\n                shortNameEng: \"Jun\",\n                shortNameHeb: \"Jun\",\n            }\n            break;\n        case 7:\n            result = {\n                shortNameEng: \"Jul\",\n                shortNameHeb: \"Jul\",\n            }\n            break;\n        case 8:\n            result = {\n                shortNameEng: \"Aug\",\n                shortNameHeb: \"Aug\",\n            }\n            break;\n        case 9:\n            result = {\n                shortNameEng: \"Sep\",\n                shortNameHeb: \"Sep\",\n            }\n            break;\n        case 10:\n            result = {\n                shortNameEng: \"Oct\",\n                shortNameHeb: \"Oct\",\n            }\n            break;\n        case 11:\n            result = {\n                shortNameEng: \"Nov\",\n                shortNameHeb: \"Nov\",\n            }\n            break;\n        case 12:\n            result = {\n                shortNameEng: \"Dec\",\n                shortNameHeb: \"Dec\",\n            }\n            break;\n        default:\n            result = {\n                shortNameEng: monthNumber,\n                shortNameHeb: monthNumber,\n            }\n    }\n    node.warn(result.shortNameHeb)\n    return result.shortNameHeb\n}\n\nconst dateConverter = () => {\n    const date = new Date()\n\n    let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()\n\n    let month = +date.getMonth() + 1\n    month = month < 10 ? '0' + month : month\n\n    return `${day}.${month}.${date.getFullYear()}`\n}\n\nmsg.data = dateConverter()\n\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 355,
-        "y": 1400,
+        "x": 295,
+        "y": 1360,
         "wires": [
             [
                 "da65feef95962489"
